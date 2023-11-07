@@ -17,6 +17,7 @@ public class Controller {
     private TextField username;
     @FXML
     private PasswordField password;
+    private App m = new App();
 
 
     public void userLogin(ActionEvent event) throws IOException {
@@ -24,7 +25,6 @@ public class Controller {
     }
 
     private void checkLogin() throws IOException{
-        App m = new App();
         if (username.getText().toString().equals("samnperry@arizona.edu") && password.getText().toString().equals("123")){
             invalidLogin.setText("Login Success");
 
