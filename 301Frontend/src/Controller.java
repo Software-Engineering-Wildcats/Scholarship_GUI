@@ -1,6 +1,9 @@
-package Frontend;
-import java.io.IOException;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import Backend.User;
+import Backend.UserTest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,16 +48,21 @@ public class Controller {
     }
 
     private void checkLogin() throws IOException{
-        if (username.getText().toString().equals("samnperry@arizona.edu") && password.getText().toString().equals("123")){
-            invalidLogin.setText("Login Success");
+        UserTest test = new UserTest();
+        ArrayList<User> users = new ArrayList<>();
+        users = test.createUsers();
+        for (User user : users) {
+            if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
+                invalidLogin.setText("Login Success");
 
-            m.changeScene("afterLogin.fmxl");
-        }
-        else if(username.getText().isEmpty() && password.getText().isEmpty()){
-            invalidLogin.setText("Please enter your login");
-        }
-        else{
-            invalidLogin.setText("Incorrect email or password");
+                m.changeScene("afterLogin.fmxl");
+            }
+            else if(username.getText().isEmpty() && password.getText().isEmpty()){
+                invalidLogin.setText("Please enter your login");
+            }
+            else{
+                invalidLogin.setText("Incorrect email or password");
+            }
         }
     }
 
