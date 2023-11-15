@@ -1,3 +1,4 @@
+package Frontend;
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -16,8 +17,7 @@ public class App extends Application {
             stg = primaryStage;
             primaryStage.setResizable(false);
             root = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-            Scene scene = new Scene(root, 600, 400);
-              primaryStage.setTitle("Login Page");
+            Scene scene = new Scene(root, 1280, 720);
               primaryStage.setScene(scene);
               primaryStage.show();
         } catch (IOException e) {

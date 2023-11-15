@@ -1,3 +1,4 @@
+package Frontend;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -6,20 +7,39 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class Controller {
 
     @FXML
-    private Button logInButton;
+    private Label createAnAccount;
+
     @FXML
     private Label invalidLogin;
+
     @FXML
-    private TextField username;
+    private Button logInButton;
+
+    @FXML
+    private Label loginLabel;
+
     @FXML
     private PasswordField password;
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private Label welcomeLabel;
+
     private App m = new App();
 
+    @FXML
+    void createAccount(MouseEvent event) throws IOException {
+        m.changeScene("createAccount.fxml");
+    }
 
+    @FXML
     public void userLogin(ActionEvent event) throws IOException {
         checkLogin();
     }
