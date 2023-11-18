@@ -28,14 +28,14 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="createEmail" layoutX="518.0" layoutY="202.0" prefHeight="26.0" prefWidth="252.0" />
+            <TextField fx:id="createEmail" layoutX="518.0" layoutY="202.0" prefHeight="26.0" prefWidth="252.0" promptText="Email" />
             <Label layoutX="524.0" layoutY="253.0" text="Password">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="createPassword" layoutX="519.0" layoutY="285.0" prefHeight="26.0" prefWidth="252.0" />
-            <Button fx:id="createAccountButton" layoutX="552.0" layoutY="462.0" mnemonicParsing="false" onAction="#accountCreate" text=" Create your account">
+            <TextField fx:id="createPassword" layoutX="519.0" layoutY="285.0" prefHeight="26.0" prefWidth="252.0" promptText="Password" />
+            <Button fx:id="createAccountButton" layoutX="546.0" layoutY="465.0" mnemonicParsing="false" onAction="#accountCreate" text=" Create your account">
                <font>
                   <Font size="18.0" />
                </font>
@@ -50,8 +50,10 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="469.0" layoutY="425.0" text="By creating an account, you agree to sign up for email notifications." />
+            <Label layoutX="465.0" layoutY="421.0" text="By creating an account, you agree to sign up for email notifications." />
             <ChoiceBox fx:id="userSelect" layoutX="565.0" layoutY="346.0" prefWidth="150.0" />
+            <Label fx:id="errorLabel" layoutX="569.0" layoutY="398.0" prefHeight="18.0" prefWidth="143.0" style="-fx-alignment: Center;" textAlignment="CENTER" textFill="RED" />
+            <Label fx:id="nonStudentError" layoutX="408.0" layoutY="524.0" prefHeight="18.0" prefWidth="483.0" style="-fx-alignment: Center;" textFill="RED" />
          </children>
       </AnchorPane>
    </center>
