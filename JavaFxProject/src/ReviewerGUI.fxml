@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -15,20 +16,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReviewerGUIController">
    <top>
-      <AnchorPane prefHeight="36.0" prefWidth="1144.0" style="-fx-background-color: #EF4056;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="36.0" prefWidth="1144.0" style="-fx-background-color: #AB0520;" BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="tfReviewersName" fill="#fff6f6" layoutX="1089.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reviewers Name" wrappingWidth="810.57421875" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0" />
+            <Text fx:id="tfReviewersName" fill="#fff6f6" layoutX="1089.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reviewers Name" wrappingWidth="311.57421875" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0" />
             <Button fx:id="btSubmitApplicant" layoutX="763.0" layoutY="5.0" mnemonicParsing="false" onAction="#btSubmitApplicantClicked" style="-fx-background-color: #8B0015;" text="Submit Applicant" textFill="WHITE" />
             <Button fx:id="btSubmitNotes" layoutX="1135.0" layoutY="5.0" mnemonicParsing="false" onAction="#btSubmitNotesClicked" style="-fx-background-color: #8B0015;" text="Submit Notes" textFill="WHITE" />
+            <TextField fx:id="tfSearchBar" layoutX="332.0" layoutY="5.0" promptText="Search Bar" style="-fx-alignment: center;" />
+            <Button fx:id="btSearch" layoutX="481.0" layoutY="4.0" mnemonicParsing="false" onAction="#btSearchClicked" style="-fx-background-color: #8B0015;" text="Search" textFill="WHITE" />
          </children>
       </AnchorPane>
    </top>
    <bottom>
-      <AnchorPane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #EF4056;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #AB0520;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="66.0" fitWidth="64.0" layoutX="561.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0">
                <image>
@@ -36,30 +38,23 @@
                </image>
             </ImageView>
             <Button fx:id="btLogOut" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#btLogOutClicked" style="-fx-background-color: #8B0015;" text="Log Out" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="10.0" />
+            <RadioButton fx:id="rbRelevance" layoutX="344.0" layoutY="5.0" mnemonicParsing="false" onAction="#rbSortRelevance" text="Sort by Relevance" textFill="WHITE" />
+            <RadioButton fx:id="rbName" layoutX="344.0" layoutY="27.0" mnemonicParsing="false" onAction="#rbSortName" text="Sort by Name" textFill="WHITE" />
+            <RadioButton fx:id="rbPayout" layoutX="344.0" layoutY="50.0" mnemonicParsing="false" onAction="#rbSortPayout" text="Sort by Payout" textFill="WHITE" />
          </children>
       </AnchorPane>
    </bottom>
    <left>
-      <VBox prefHeight="612.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="612.0" prefWidth="320.0" style="-fx-background-color: #F4EDE5;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane>
                <children>
                   <HBox prefHeight="600.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="320.0" />
-                        <ScrollPane prefHeight="600.0" prefWidth="611.0">
-                           <content>
-                              <TextFlow fx:id="spScholarshipInformation" lineSpacing="1.0" prefHeight="370.0" prefWidth="283.0">
-                                 <children>
-                                    <Text lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;This is some long text&#10;&#10;&#10;" />
-                                    <Text layoutX="156.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is some really long text" />
-                                 </children>
-                              </TextFlow>
-                           </content>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="7.0" />
-                           </HBox.margin>
-                        </ScrollPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="320.0">
+                           <children>
+                              <TextArea fx:id="taScholarshipInformation" editable="false" prefHeight="581.0" prefWidth="300.0" wrapText="true" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0" />
+                           </children></AnchorPane>
                      </children>
                   </HBox>
                   <Line endX="320.0" endY="612.0" startX="320.0" />
@@ -72,14 +67,14 @@
    <right>
       <VBox prefHeight="612.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="612.0" prefWidth="200.0">
+            <AnchorPane prefHeight="612.0" prefWidth="200.0" style="-fx-background-color: #F4EDE5;">
                <children>
                   <Text layoutX="78.0" layoutY="8.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #AB0520; -fx-effect: bold;" text="Review" AnchorPane.topAnchor="0.0" />
                   <ChoiceBox fx:id="cbReviewerRating" layoutX="25.0" layoutY="164.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
                   <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000; -fx-effect: bold;" text="Rating (1-5)" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="20.0" />
-                  <TextField fx:id="tfNotes" layoutX="26.0" layoutY="284.0" prefHeight="250.0" prefWidth="149.0" promptText="Enter notes here..." AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="105.0" />
                   <Text layoutX="83.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000; -fx-effect: bold;" text="Notes" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="80.0" />
                   <Line endY="612.0" layoutX="0.5" AnchorPane.leftAnchor="0.0" />
+                  <TextArea fx:id="tfNotes" layoutX="10.0" layoutY="105.0" prefHeight="200.0" prefWidth="187.0" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="105.0" />
                </children>
             </AnchorPane>
          </children>
@@ -88,12 +83,12 @@
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="612.0" prefWidth="760.0">
+            <AnchorPane prefHeight="612.0" prefWidth="760.0" style="-fx-background-color: #F4EDE5;">
                <children>
                   <Text layoutX="78.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #AB0520; -fx-effect: bold;" text="Applicants" AnchorPane.topAnchor="0.0" />
                   <ScrollPane layoutX="32.0" layoutY="24.0" prefHeight="577.0" prefWidth="500.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
                      <content>
-                        <TextArea fx:id="taProfile" prefHeight="589.0" prefWidth="500.0" text="s3arch bar, sort f3atur3s, sort r3l3vanc3, submit not3s, implement scholarship information" wrapText="true" />
+                        <TextArea fx:id="taProfile" editable="false" prefHeight="589.0" prefWidth="500.0" promptText="Applicant profile will display here" wrapText="true" />
                      </content>
                   </ScrollPane>
                   <ListView fx:id="lvApplicants" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="20.0" />

@@ -1,4 +1,5 @@
 import Backend.StudentApplication;
+import Backend.scholarship;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,13 +8,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.util.Callback;
 
-public class MainSceneController {
+public class ReviewerGUIController {
 
     //// data structure for this GUI
     // Observable list for lvApplicants
@@ -35,6 +38,9 @@ public class MainSceneController {
     private Button btSubmitApplicant;
 
     @FXML
+    private Button btSearch;
+
+    @FXML
     private ChoiceBox<Integer> cbReviewerRating;
 
     @FXML
@@ -44,13 +50,25 @@ public class MainSceneController {
     private TextArea taProfile;
 
     @FXML
-    private TextFlow spScholarshipInformation;
+    private TextArea taScholarshipInformation;
 
     @FXML
-    private TextField tfNotes;
+    private TextArea tfNotes;
 
     @FXML
     private Text tfReviewersName;
+
+    @FXML
+    private TextField tfSearchBar;
+
+    @FXML
+    private RadioButton rbName;
+
+    @FXML
+    private RadioButton rbPayout;
+
+    @FXML
+    private RadioButton rbRelevance;
 
     //// scripts
     @FXML
@@ -72,6 +90,31 @@ public class MainSceneController {
                 + "Rating: " + rating + "\nNotes: " + tfNotes.getText());
     }
 
+    @FXML
+    void rbSortName(ActionEvent event) {
+        System.out.println("*****************"
+                + "\nMock call to send 'sort by name' to Matching");
+    }
+
+    @FXML
+    void rbSortPayout(ActionEvent event) {
+        System.out.println("*****************"
+                + "\nMock call to send 'sort by payout' to Matching");
+    }
+
+    @FXML
+    void rbSortRelevance(ActionEvent event) {
+        System.out.println("*****************"
+                + "\nMock call to send 'sort by relevance' to Matching");
+    }
+
+    @FXML
+    void btSearchClicked(ActionEvent event) {
+        System.out.println("*****************"
+                + "\nMock call to send search to Matching\nInformation sent over is as follows:\n"
+                + "Search Contents: " + tfSearchBar.getText());
+    }
+
     // pass choice box number to global
     private void handleChoiceBoxSelection() {
         rating = cbReviewerRating.getValue();
@@ -80,6 +123,21 @@ public class MainSceneController {
 
     // the initialize function that is called when the scene is built
     public void initialize() {
+        //// For radioButtons
+        ToggleGroup sortToggle = new ToggleGroup();
+        rbName.setToggleGroup(sortToggle);
+        rbPayout.setToggleGroup(sortToggle);
+        rbRelevance.setToggleGroup(sortToggle);
+
+        //// For tfReviewersName
+        tfReviewersName.setText("User Three");
+
+        //// For taScholarshipInformation
+        scholarship testScholarship = new scholarship("Merit Scholarship", 5000, "2023-12-31",
+                "book read write language science art love friend family house car journey dream sleep awake morning night star moon ocean beach city explore discover learn",
+                "Computer Science");
+        taScholarshipInformation.setText(testScholarship.toString());
+
         //// For cbReviewerRating
         // create data for cbReviewerRating
         cbReviewerRating.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5));
@@ -87,7 +145,6 @@ public class MainSceneController {
 
         // create listener for box selection
         cbReviewerRating.setOnAction(event -> handleChoiceBoxSelection());
-        // handle listener event
 
         //// For lvApplicants
         // create sample student data

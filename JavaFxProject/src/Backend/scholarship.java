@@ -101,4 +101,14 @@ public class scholarship {
     }
     ///////// End mutators and accessors /////////
 
+    @Override
+    public String toString() {
+        return "Scholarship\n" +
+                "Scholarship Name: '" + scholarshipName + '\'' +
+                "\nPayout: " + payout +
+                "\nDeadline: '" + deadline + '\'' +
+                "\nRequired Info: '" + customRequiredInfo + '\'' +
+                "\nPreferred Majors: '" + preferedMajors + '\'';
+    }
+
 }
