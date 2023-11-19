@@ -54,8 +54,24 @@ public class Controller {
         for (User user : users) {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
                 invalidLogin.setText("Login Success");
-
-                m.changeScene("afterLogin.fmxl");
+                if (user.getUserType() == 1){
+                    m.changeScene("ApplicantGUI.fxml");
+                }
+                else if (user.getUserType() == 2){
+                    m.changeScene("AdminGUI.fxml");
+                }
+                else if (user.getUserType() == 3){
+                    m.changeScene("ReviewerGUI.fxml");
+                }
+                else if (user.getUserType() == 4){
+                    m.changeScene("SponsorGUI.fxml");
+                }
+                else if (user.getUserType() == 5){
+                    m.changeScene("StewerGUI.fxml");
+                }
+                else if (user.getUserType() == 6){
+                    m.changeScene("SupportGUI.fxml");
+                }
             }
             else if(username.getText().isEmpty() && password.getText().isEmpty()){
                 invalidLogin.setText("Please enter your login");
