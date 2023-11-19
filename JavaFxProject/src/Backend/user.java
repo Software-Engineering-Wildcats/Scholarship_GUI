@@ -1,109 +1,66 @@
 package Backend;
 
-//This is a parent class for all users
-//For this file we will use inheritance 
-//The specific users will be a child 
-public class user {
+public class User {
+    private String email;
+    private String password;
     private String name;
-    private String emailAddress;
-    private String securityQuestion; // CSV of the 3 security questions that can be split later through .split()
-                                     // method
-    private String securityQuestionAnswers; // CSV of the 3 security questions that can be split later through .split()
-                                            // method
-    private String userPermission; // This is the permission level of the user. This will be used to determine what
-                                   // the user can do in the system
+    private int typeUser;
 
-    public user() { // default constructor
-        this.name = "No Name";
-        this.emailAddress = "None";
-        this.securityQuestion = "None";
-        this.securityQuestionAnswers = "None";
-        this.userPermission = "None";
-    }
-
-    ////// Overload constructors for the user class //////
-    public user(String name) {
+    public User(String email, String password, String name, int typeUser) {
+        this.email = email;
+        this.password = password;
         this.name = name;
-        this.emailAddress = "None";
-        this.securityQuestion = "None";
-        this.securityQuestionAnswers = "None";
-        this.userPermission = "None";
+        this.typeUser = typeUser;
     }
 
-    public user(String name, String emailAddress) {
-        this.name = name;
-        this.emailAddress = emailAddress;
-        this.securityQuestion = "None";
-        this.securityQuestionAnswers = "None";
-        this.userPermission = "None";
+    public String getEmail(){
+        return email;
     }
 
-    public user(String name, String emailAddress, String securityQuestion) {
-        this.name = name;
-        this.emailAddress = emailAddress;
-        this.securityQuestion = securityQuestion;
-        this.securityQuestionAnswers = "None";
-        this.userPermission = "None";
+    public void setEmail(String email){
+        this.email = email;
+    }
+    public String getPassword(){
+        return password;
     }
 
-    public user(String name, String emailAddress, String securityQuestion, String securityQuestionAnswers) {
-        this.name = name;
-        this.emailAddress = emailAddress;
-        this.securityQuestion = securityQuestion;
-        this.securityQuestionAnswers = securityQuestionAnswers;
-        this.userPermission = "None";
+    public void setPassword(String password){
+        this.password = password;
     }
 
-    public user(String name, String emailAddress, String securityQuestion, String securityQuestionAnswers,
-            String userPermission) {
-        this.name = name;
-        this.emailAddress = emailAddress;
-        this.securityQuestion = securityQuestion;
-        this.securityQuestionAnswers = securityQuestionAnswers;
-        this.userPermission = userPermission;
-    }
-    ////// End of overloaded constructors for the user class //////
-
-    ////// Getters and Setters for the user class //////
-    public String getName() {
+    public String getName(){
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public int getUserType(){
+        return typeUser;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setUserType(String userType){
+        if (userType == "Applicant"){
+            typeUser = 1;
+        }
+        else if (userType == "Admin"){
+            typeUser = 2;
+        }
+        else if (userType == "Reviewer"){
+            typeUser = 3;
+        }
+        else if (userType == "Sponsor"){
+            typeUser = 4;
+        }
+        else if (userType == "Stewer"){
+            typeUser = 5;
+        }
+        else if (userType == "Support"){
+            typeUser = 6;
+        }
+        else{
+            typeUser = 1;
+        }
     }
-
-    public String getSecurityQuestion() {
-        return securityQuestion;
-    }
-
-    public void setSecurityQuestion(String securityQuestion) {
-        this.securityQuestion = securityQuestion;
-    }
-
-    public String getSecurityQuestionAnswers() {
-        return securityQuestionAnswers;
-    }
-
-    public void setSecurityQuestionAnswers(String securityQuestionAnswers) {
-        this.securityQuestionAnswers = securityQuestionAnswers;
-    }
-
-    public String getUserPermission() {
-        return userPermission;
-    }
-
-    public void setUserPermission(String userPermission) {
-        this.userPermission = userPermission;
-    }
-    ////// End of getters and setters for the user class //////
-
 }

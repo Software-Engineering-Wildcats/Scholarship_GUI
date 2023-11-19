@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import Backend.StudentApplication;
 import Backend.scholarship;
 import javafx.collections.FXCollections;
@@ -29,6 +31,9 @@ public class ReviewerGUIController {
 
     // String for Notes
     String notes = "";
+
+    // Scene change
+    private App m = new App();
 
     //// containers
     @FXML
@@ -72,8 +77,8 @@ public class ReviewerGUIController {
 
     //// scripts
     @FXML
-    void btLogOutClicked(ActionEvent event) {
-        // TODO change scene to Log In
+    void btLogOutClicked(ActionEvent event) throws IOException {
+        m.changeScene("LoginScene.fxml");
     }
 
     @FXML

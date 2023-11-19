@@ -1,7 +1,7 @@
 package Backend;
 
 //This student class inherits from the user class
-public class student extends user {
+public class student extends User {
     private String major;
     private double gpa;
     private String studentID;
