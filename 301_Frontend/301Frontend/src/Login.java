@@ -50,7 +50,7 @@ public class Login {
     private void checkLogin() throws IOException{
         UserTest test = new UserTest();
         ArrayList<User> users = new ArrayList<>();
-        users = test.createUsers();
+        users = test.getUsers();
         for (User user : users) {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
                 invalidLogin.setText("Login Success");

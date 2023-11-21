@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import Backend.UserTest;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +24,9 @@ public class CreateAccount {
     private TextField createPassword;
 
     @FXML
+    private TextField createName;
+
+    @FXML
     private Label errorLabel;
 
     @FXML
@@ -33,7 +37,7 @@ public class CreateAccount {
 
     @FXML
     void accountCreate(ActionEvent event) throws IOException {
-       if (createEmail.getText().isEmpty() || createPassword.getText().isEmpty() || userSelect.getValue() == null){
+       if (createName.getText().isEmpty() ||createEmail.getText().isEmpty() || createPassword.getText().isEmpty() || userSelect.getValue() == null){
         errorLabel.setText("Please enter all the fields");
         nonStudentError.setText("");
        }
@@ -41,7 +45,9 @@ public class CreateAccount {
         errorLabel.setText("");
         nonStudentError.setText("If you are a Non-Student, please contact University Staff to create an account for you.");
        }
-       else if (userSelect.getValue().equals("Student") && !(createEmail.getText().isEmpty()) && !(createPassword.getText().isEmpty())){
+       else if (userSelect.getValue().equals("Student") && !(createName.getText().isEmpty()) && !(createEmail.getText().isEmpty()) && !(createPassword.getText().isEmpty())){
+        UserTest test = new UserTest();
+        test.addUser(createEmail.getText().toString(), createPassword.getText().toString(), createName.getText().toString(), 1); 
         m.changeScene("LoginScene.fxml");
        }
     }
