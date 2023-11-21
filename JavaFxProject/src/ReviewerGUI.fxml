@@ -34,7 +34,7 @@
          <children>
             <ImageView fitHeight="66.0" fitWidth="64.0" layoutX="561.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0">
                <image>
-                  <Image url="src\Resources\ua_block_rgb_3.png" />
+                  <Image url="@Resources/ua_block_rgb_3.png" />
                </image>
             </ImageView>
             <Button fx:id="btLogOut" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#btLogOutClicked" style="-fx-background-color: #8B0015;" text="Log Out" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="10.0" />

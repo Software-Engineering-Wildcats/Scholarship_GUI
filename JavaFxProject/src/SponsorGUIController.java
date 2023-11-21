@@ -22,7 +22,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.util.Callback;
 
-public class ReviewerGUIController {
+public class SponsorGUIController {
 
     //// data structure for this GUI
     // Observable list for lvApplicants
@@ -84,6 +84,12 @@ public class ReviewerGUIController {
     @FXML
     void btLogOutClicked(ActionEvent event) throws IOException {
         m.changeScene("LoginScene.fxml");
+    }
+
+    // Create Scholarship goes to CreateScholarshipGUI
+    @FXML
+    void btCreateScholarshipClicked(ActionEvent event) throws IOException {
+        m.changeScene("CreateScholarship.fxml");
     }
 
     // Submit applicant button listener
@@ -170,6 +176,7 @@ public class ReviewerGUIController {
         tfReviewersName.setText("User Three");
 
         //// For taScholarshipInformation
+        // TODO change to be empty, and load info if marked as self reviewer
         scholarship testScholarship = new scholarship("Merit Scholarship", 5000, "2023-12-31",
                 "book read write language science art love friend family house car journey dream sleep awake morning night star moon ocean beach city explore discover learn",
                 "Computer Science");

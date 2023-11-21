@@ -47,36 +47,30 @@ public class Login {
         checkLogin();
     }
 
-    private void checkLogin() throws IOException{
+    private void checkLogin() throws IOException {
         UserTest test = new UserTest();
         ArrayList<User> users = new ArrayList<>();
         users = test.createUsers();
         for (User user : users) {
-            if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
+            if (username.getText().toString().equals(user.getEmail())
+                    && password.getText().toString().equals(user.getPassword())) {
                 invalidLogin.setText("Login Success");
-                if (user.getUserType() == 1){
+                if (user.getUserType() == 1) {
                     m.changeScene("ApplicantGUI.fxml");
-                }
-                else if (user.getUserType() == 2){
+                } else if (user.getUserType() == 2) {
                     m.changeScene("AdminGUI.fxml");
-                }
-                else if (user.getUserType() == 3){
+                } else if (user.getUserType() == 3) {
                     m.changeScene("ReviewerGUI.fxml");
-                }
-                else if (user.getUserType() == 4){
+                } else if (user.getUserType() == 4) {
                     m.changeScene("SponsorGUI.fxml");
-                }
-                else if (user.getUserType() == 5){
-                    m.changeScene("StewerGUI.fxml");
-                }
-                else if (user.getUserType() == 6){
+                } else if (user.getUserType() == 5) {
+                    m.changeScene("StewerdGUI.fxml");
+                } else if (user.getUserType() == 6) {
                     m.changeScene("SupportGUI.fxml");
                 }
-            }
-            else if(username.getText().isEmpty() && password.getText().isEmpty()){
+            } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
                 invalidLogin.setText("Please enter your login");
-            }
-            else{
+            } else {
                 invalidLogin.setText("Incorrect email or password");
             }
         }
