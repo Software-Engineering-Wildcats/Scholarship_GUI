@@ -1,5 +1,11 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
+import java.util.Scanner;
 
 import Backend.StudentApplication;
 import Backend.scholarship;
@@ -19,12 +25,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.util.Callback;
 
 public class SponsorGUIController {
 
-    //// data structure for this GUI
+    //// statics
     // Observable list for lvApplicants
     private ObservableList<StudentApplication> StuAppList = FXCollections.observableArrayList();
 
@@ -38,6 +43,15 @@ public class SponsorGUIController {
 
     // Scene change
     private App m = new App();
+
+    // Name of file where createdscholarship is
+    String filename = "createdscholarship.csv";
+
+    // path variable to access file
+    Path path = Paths.get(filename);
+
+    // Checks to see if is reviewer
+    boolean selfReviewer = false;
 
     //// containers
     @FXML
@@ -83,6 +97,7 @@ public class SponsorGUIController {
     // Log out button sends to log in scene
     @FXML
     void btLogOutClicked(ActionEvent event) throws IOException {
+        Files.delete(path);
         m.changeScene("LoginScene.fxml");
     }
 
@@ -165,7 +180,7 @@ public class SponsorGUIController {
     }
 
     // the initialize function that is called when the scene is built
-    public void initialize() {
+    public void initialize() throws FileNotFoundException {
         //// For radioButtons
         ToggleGroup sortToggle = new ToggleGroup();
         rbName.setToggleGroup(sortToggle);
@@ -176,11 +191,17 @@ public class SponsorGUIController {
         tfReviewersName.setText("User Three");
 
         //// For taScholarshipInformation
-        // TODO change to be empty, and load info if marked as self reviewer
-        scholarship testScholarship = new scholarship("Merit Scholarship", 5000, "2023-12-31",
-                "book read write language science art love friend family house car journey dream sleep awake morning night star moon ocean beach city explore discover learn",
-                "Computer Science");
-        taScholarshipInformation.setText(testScholarship.toString());
+        if (Files.exists(path) && Files.isRegularFile(path)) {
+            selfReviewer = true;
+            Scanner s = new Scanner(new File(filename));
+            scholarship madeScholarship = new scholarship(s.next(), s.nextInt(), s.next(), s.nextLine(), s.next());
+            taScholarshipInformation.setText(madeScholarship.toString());
+            s.close();
+        }
+
+        // turns fields on or off depending of if submitting notes
+        cbReviewerRating.setDisable(!selfReviewer);
+        tfNotes.setEditable(selfReviewer);
 
         //// For cbReviewerRating
         // create data for cbReviewerRating
@@ -235,7 +256,9 @@ public class SponsorGUIController {
         StuAppList.add(s7);
 
         // sets applications list view to the sample data
-        lvApplicants.setItems(StuAppList);
+        if (selfReviewer) {
+            lvApplicants.setItems(StuAppList);
+        }
 
         // create an event listener for applications selection
         lvApplicants.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

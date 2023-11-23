@@ -1,4 +1,8 @@
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 import javafx.event.ActionEvent;
@@ -14,6 +18,7 @@ import javafx.scene.text.Text;
 
 public class CreateScholarshipGUIController {
     //// statics
+    String filepath = "createdscholarship.csv";
 
     // Scene change
     private App m = new App();
@@ -58,12 +63,29 @@ public class CreateScholarshipGUIController {
             showIncompleteFormAlert();
             return;
         }
-        if (cbSelfReviewer.isSelected()) {
-            // TODO implement becomes reviewer
-        } else {
-            // TODO implement doesn't become reviewer
+        if (taAdditionalRequirements.getText().isBlank()) {
+            taAdditionalRequirements.setText("None");
         }
-        // TODO implement send to backend
+        String scholarshipinfo = String.format("%s %d %s %s\n %s", tfName.getText(),
+                Integer.parseInt(tfPayout.getText()),
+                tfDeadline.getText(), taAdditionalRequirements.getText(), tfMajors.getText());
+        if (cbSelfReviewer.isSelected()) {
+            writeToFile(filepath, scholarshipinfo);
+        } else {
+        }
+        System.out.println("*****************"
+                + "\nMock call to send Scholarship to Administrator through backend\nPassed scholarship information is:\n"
+                + scholarshipinfo);
+        if (cbSelfReviewer.isSelected()) {
+            System.out.println("SelfReviewer: true");
+        } else {
+            System.out.println("SelfReviewer: false");
+        }
+        try {
+            m.changeScene("SponsorGUI.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showIncompleteFormAlert() {
@@ -83,6 +105,20 @@ public class CreateScholarshipGUIController {
         if (result.isPresent() && result.get() == okButton) {
             System.out.println("User clicked OK.");
             // Add your logic for handling the OK button click here
+        }
+    }
+
+    private static void writeToFile(String filePath, String content) {
+        // Create a Path object
+        Path path = Paths.get(filePath);
+
+        // Use try-with-resources to automatically close resources
+        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+            // Write content to the file
+            writer.write(content);
+        } catch (IOException e) {
+            // Handle the exception appropriately (e.g., log it, show a message)
+            e.printStackTrace();
         }
     }
 

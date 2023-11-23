@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateScholarshipGUIController">
    <top>
       <AnchorPane prefHeight="36.0" prefWidth="1080.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER">
@@ -45,7 +44,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="72.0" layoutY="182.58203125" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #AB0520;" text="Payout*" wrappingWidth="79.13671875" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="161.0">
+            <Text layoutX="72.0" layoutY="182.58203125" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #AB0520;" text="Payout* (Whole dollar amount only)" wrappingWidth="339.13671875" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="161.0">
                <font>
                   <Font size="20.0" />
                </font>
