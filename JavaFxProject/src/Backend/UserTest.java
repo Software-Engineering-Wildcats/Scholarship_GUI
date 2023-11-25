@@ -1,9 +1,11 @@
 package Backend;
+
 import java.util.ArrayList;
 
 public class UserTest {
-    public ArrayList<User> createUsers(){
-    ArrayList<User> users = new ArrayList<>();
+    private ArrayList<User> users = new ArrayList<>();
+
+    public ArrayList<User> createUsers() {
 
         // Manually create users
         User user1 = new User("user1@example.com", "password1", "User One", 1);
@@ -20,7 +22,18 @@ public class UserTest {
         users.add(user4);
         users.add(user5);
         users.add(user6);
-        
+
+        return users;
+    }
+
+    public void addUser(String email, String password, String name, int id) {
+        // Create a new user and add it to the list
+        User newUser = new User(email, password, name, id);
+        users.add(newUser);
+    }
+
+    public ArrayList<User> getUsers() {
+        // createUsers();
         return users;
     }
 }
