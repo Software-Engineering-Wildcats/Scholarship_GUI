@@ -34,9 +34,9 @@ public class App extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent root = (Parent) loader.load();
 
-        stg.getScene().setRoot(root);
         Login controller = loader.getController();
         controller.setUser(users);
+        stg.getScene().setRoot(root);
     }
  
  public static void main(String[] args) {  

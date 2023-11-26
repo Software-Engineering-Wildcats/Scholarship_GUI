@@ -48,6 +48,12 @@ public class Login {
         checkLogin();
     }
 
+    public void initialize(){
+        if (users == null){
+        users = new UserTest();
+        }
+    }
+
     private void checkLogin() throws IOException{
         for (User user : users.getUsers()) {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
