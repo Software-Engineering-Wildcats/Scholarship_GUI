@@ -15,6 +15,9 @@ public class CreateAccount {
     private App m = new App();
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private Button createAccountButton;
 
     @FXML
@@ -48,8 +51,13 @@ public class CreateAccount {
        else if (userSelect.getValue().equals("Student") && !(createName.getText().isEmpty()) && !(createEmail.getText().isEmpty()) && !(createPassword.getText().isEmpty())){
         UserTest test = new UserTest();
         test.addUser(createEmail.getText().toString(), createPassword.getText().toString(), createName.getText().toString(), 1); 
-        m.changeScene("LoginScene.fxml");
+        m.changeScene("LoginScene.fxml", test);
        }
+    }
+    
+    @FXML
+    void goBack(ActionEvent event) throws IOException {
+        m.changeScene("LoginScene.fxml");
     }
 
     private void handleChoiceBoxSelection() {

@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 
 public class Login {
 
+    private UserTest users;
     @FXML
     private Label createAnAccount;
 
@@ -48,10 +49,7 @@ public class Login {
     }
 
     private void checkLogin() throws IOException{
-        UserTest test = new UserTest();
-        ArrayList<User> users = new ArrayList<>();
-        users = test.getUsers();
-        for (User user : users) {
+        for (User user : users.getUsers()) {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
                 invalidLogin.setText("Login Success");
                 if (user.getUserType() == 1){
@@ -67,7 +65,7 @@ public class Login {
                     m.changeScene("SponsorGUI.fxml");
                 }
                 else if (user.getUserType() == 5){
-                    m.changeScene("StewerGUI.fxml");
+                    m.changeScene("StewardGUI.fxml");
                 }
                 else if (user.getUserType() == 6){
                     m.changeScene("SupportGUI.fxml");
@@ -80,6 +78,10 @@ public class Login {
                 invalidLogin.setText("Incorrect email or password");
             }
         }
+    }
+
+    public void setUser (UserTest users){
+        this.users = users;
     }
 
 }

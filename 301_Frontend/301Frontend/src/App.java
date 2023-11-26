@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import Backend.UserTest;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,6 +27,16 @@ public class App extends Application {
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stg.getScene().setRoot(pane);
+    }
+    public void changeScene(String fxml, UserTest users) throws IOException {
+        /*Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        stg.getScene().setRoot(pane);*/
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Parent root = (Parent) loader.load();
+
+        stg.getScene().setRoot(root);
+        Login controller = loader.getController();
+        controller.setUser(users);
     }
  
  public static void main(String[] args) {  

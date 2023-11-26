@@ -60,6 +60,7 @@
                </font>
             </Label>
             <TextField fx:id="createName" layoutX="514.0" layoutY="159.0" prefHeight="26.0" prefWidth="252.0" promptText="Name" />
+            <Button fx:id="backButton" layoutX="9.0" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
          </children>
       </AnchorPane>
    </center>
