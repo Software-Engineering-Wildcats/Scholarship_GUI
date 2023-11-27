@@ -54,7 +54,7 @@ public class App extends Application {
         Parent root = (Parent) loader.load();
 
         stg.getScene().setRoot(root);
-        AccountCreationSceneController controller = loader.getController();
+        ApplicationCreationSceneController controller = loader.getController();
         controller.setScholarshipName(name);
 
     }

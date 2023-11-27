@@ -104,7 +104,7 @@ public class ApplicantSceneController {
         btnCreateApplication.setOnAction(e -> {
             try {
 
-                peas.changeScene("AccountCreationScene.fxml", currentFood.getScholarshipName());
+                peas.changeScene("ApplicationCreationScene.fxml", currentFood.getScholarshipName());
             }
 
              catch (IOException e1) {
