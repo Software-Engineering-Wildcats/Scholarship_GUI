@@ -10,7 +10,14 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateAccount">
    <top>
-      <BorderPane prefHeight="74.0" prefWidth="1280.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER" />
+      <BorderPane prefHeight="74.0" prefWidth="1280.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="74.0" prefWidth="252.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="backButton" layoutX="31.0" layoutY="19.0" mnemonicParsing="false" onAction="#goBack" prefHeight="34.0" prefWidth="67.0" text="Back" />
+               </children>
+            </AnchorPane>
+         </top></BorderPane>
    </top>
    <bottom>
       <BorderPane prefHeight="74.0" prefWidth="1280.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER" />
@@ -60,7 +67,6 @@
                </font>
             </Label>
             <TextField fx:id="createName" layoutX="514.0" layoutY="159.0" prefHeight="26.0" prefWidth="252.0" promptText="Name" />
-            <Button fx:id="backButton" layoutX="9.0" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
          </children>
       </AnchorPane>
    </center>

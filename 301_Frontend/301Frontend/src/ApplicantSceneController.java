@@ -108,10 +108,8 @@ public class ApplicantSceneController {
     }
 
     @FXML
-    void btnEditProfile(ActionEvent event) {
-        
-
-        
+    void btnEditProfile(ActionEvent event) throws IOException{
+        m.changeScene("EditProfileScene.fxml");
     }
 
     @FXML

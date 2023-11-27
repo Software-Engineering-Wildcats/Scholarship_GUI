@@ -17,7 +17,7 @@ import javafx.util.Callback;
 
 public class ViewApplicationsSceneController {
 
-    App sceney = new App();
+    App m = new App();
 
     List<StudentApplication> applicationTest = new ArrayList();
 
@@ -27,6 +27,9 @@ public class ViewApplicationsSceneController {
 
     @FXML
     private Label listInfo;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private TextField EssayField;
@@ -146,13 +149,18 @@ public class ViewApplicationsSceneController {
         System.out.println(currentFood.toString());
 
         try {
-            sceney.changeScene("ApplicantGUI.fxml");
+            m.changeScene("ApplicantGUI.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
 
+    }
+
+    @FXML
+    void backScene(ActionEvent event) throws IOException {
+        m.changeScene("ApplicantGUI.fxml");
     }
 
 

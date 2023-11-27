@@ -57,9 +57,11 @@ public class App extends Application {
 
         // Add the CSS file to the new scene
         newScene.getStylesheets().add(css);
+        System.out.println(css);
 
         // Set the new scene as the root of the stage
         stg.setScene(newScene);
+        stg.show();
     }
 
  public static void main(String[] args) {  
