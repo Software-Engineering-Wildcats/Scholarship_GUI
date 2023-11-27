@@ -2,31 +2,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Backend.AppData;
 import Backend.scholarship;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.ComboBoxListCell;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Callback;
-import javafx.util.StringConverter;
 
 
 public class ApplicantSceneController {
@@ -35,10 +21,10 @@ public class ApplicantSceneController {
     App m = new App();
 
     scholarship currentFood;
-
+    private AppData currUser = AppData.getInstance();
     @FXML
     private Label userName;
-    
+
     @FXML
     private Button logOutButton;
 
@@ -63,7 +49,7 @@ public class ApplicantSceneController {
 
     @FXML
     public void initialize () {
-        
+        userName.setText(currUser.getSharedVariable().getName());
         slippy = testScholarships();
 
         
@@ -114,7 +100,6 @@ public class ApplicantSceneController {
             }
 
              catch (IOException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
         });
@@ -139,7 +124,6 @@ public class ApplicantSceneController {
         try {
             m.changeScene("ViewApplicationsScene.fxml");
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

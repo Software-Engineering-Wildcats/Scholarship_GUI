@@ -37,9 +37,12 @@ public class ApplicationCreationSceneController {
 
     String scholarshipName;
 
-    App sceney = new App();
+    App m = new App();
 
     File selectedFile;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private TextArea ApplicantEssay;
@@ -71,6 +74,11 @@ public class ApplicationCreationSceneController {
     }
 
     @FXML
+    void backScene(ActionEvent event) throws IOException {
+        m.changeScene("ApplicantGUI.fxml");
+    }
+
+    @FXML
     void btnApplicationSubmition(ActionEvent event) {
         try {
             Long temp = Long.parseLong(ApplicantNetID.getText());
@@ -85,7 +93,7 @@ public class ApplicationCreationSceneController {
     
 
 
-            sceney.changeScene("ApplicantGUI.fxml");
+            m.changeScene("ApplicantGUI.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

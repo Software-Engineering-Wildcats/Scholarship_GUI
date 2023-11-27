@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Backend.AppData;
 import Backend.User;
 import Backend.UserTest;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 public class Login {
 
     private UserTest users;
+    private AppData currUser = AppData.getInstance();
     @FXML
     private Label createAnAccount;
 
@@ -59,21 +61,27 @@ public class Login {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
                 invalidLogin.setText("Login Success");
                 if (user.getUserType() == 1){
+                    currUser.setSharedVariable(user);
                     m.changeScene("ApplicantGUI.fxml");
                 }
                 else if (user.getUserType() == 2){
+                    currUser.setSharedVariable(user);
                     m.changeScene("AdminGUI.fxml");
                 }
                 else if (user.getUserType() == 3){
+                    currUser.setSharedVariable(user);
                     m.changeScene("ReviewerGUI.fxml");
                 }
                 else if (user.getUserType() == 4){
+                    currUser.setSharedVariable(user);
                     m.changeScene("SponsorGUI.fxml");
                 }
                 else if (user.getUserType() == 5){
+                    currUser.setSharedVariable(user);
                     m.changeScene("StewardGUI.fxml");
                 }
                 else if (user.getUserType() == 6){
+                    currUser.setSharedVariable(user);
                     m.changeScene("SupportGUI.fxml");
                 }
             }
