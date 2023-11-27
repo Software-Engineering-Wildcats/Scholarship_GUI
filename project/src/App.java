@@ -27,7 +27,7 @@ public class App extends Application {
     try {
         stg = primaryStage;
         primaryStage.setResizable(false);
-        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("ApplicantScene.fxml"));
         Scene scene = new Scene(root, 1280, 720);
           primaryStage.setScene(scene);
           primaryStage.show();

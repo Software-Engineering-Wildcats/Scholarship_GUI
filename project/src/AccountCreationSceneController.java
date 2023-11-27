@@ -85,7 +85,7 @@ public class AccountCreationSceneController {
     
 
 
-            sceney.changeScene("MainScene.fxml");
+            sceney.changeScene("ApplicantScene.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
