@@ -23,7 +23,8 @@ public class Stewcontroller {
 
     @FXML
     private Button Submit;
-
+    @FXML
+    private Button LOut;
      @FXML
     private TableView<Info> Table_View;
     
@@ -75,6 +76,14 @@ public class Stewcontroller {
  
  public void switchToScene2(ActionEvent event) throws IOException {
   Parent root = FXMLLoader.load(getClass().getResource("fundGui.fxml"));
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+  scene = new Scene(root);
+  scene.getStylesheets().add("/style.css");
+  stage.setScene(scene);
+  stage.show();
+ }
+  public void switchToScene0(ActionEvent event) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
   stage = (Stage)((Node)event.getSource()).getScene().getWindow();
   scene = new Scene(root);
   scene.getStylesheets().add("/style.css");

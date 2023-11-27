@@ -76,7 +76,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="1108.0" layoutY="644.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" text="Log Out" textAlignment="JUSTIFY">
+      <Button fx:id="LOut" layoutX="1108.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchToScene0" prefHeight="31.0" prefWidth="108.0" text="Log Out" textAlignment="JUSTIFY">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
