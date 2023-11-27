@@ -38,6 +38,19 @@ public class App extends Application {
         controller.setUser(users);
         stg.getScene().setRoot(root);
     }
+    public void changeScene(String fxml, String name) throws IOException {
+        //Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+
+        //Black magic to get a variable across scenes
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Parent root = (Parent) loader.load();
+
+        stg.getScene().setRoot(root);
+        ApplicationCreationSceneController controller = loader.getController();
+        controller.setScholarshipName(name);
+
+    }
  
  public static void main(String[] args) {  
         launch(args);
