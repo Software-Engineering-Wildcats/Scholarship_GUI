@@ -78,7 +78,7 @@ public class Login {
                 }
                 else if (user.getUserType() == 5){
                     currUser.setSharedVariable(user);
-                    m.changeScene("StuGUI.fxml", "styles.css", 1);
+                    m.changeScene("StuGUI.fxml", "style.css", 1);
                 }
                 else if (user.getUserType() == 6){
                     currUser.setSharedVariable(user);
