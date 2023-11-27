@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.util.Callback;
 
 
@@ -45,6 +46,9 @@ public class ApplicantSceneController {
 
     @FXML
     private Button ViewApplications;
+
+    @FXML
+    private TextField userSearch;
 
 
     @FXML
@@ -108,9 +112,9 @@ public class ApplicantSceneController {
     }
 
     @FXML
-    void btnEditProfile(ActionEvent event) {
+    void btnEditProfile(ActionEvent event) throws IOException {
         
-
+        m.changeScene("EditProfileScene.fxml");
         
     }
 
@@ -126,6 +130,13 @@ public class ApplicantSceneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void btnSearchClicked(ActionEvent event) {
+        System.out.println("*****************"
+        + "\nMock call to send search to Matching\nInformation sent over is as follows:\n"
+        + "Search Contents: " + userSearch.getText());
     }
 
     private List<scholarship> testScholarships() {
