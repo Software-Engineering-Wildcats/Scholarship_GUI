@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Backend.AppData;
 import Backend.User;
 import Backend.UserTest;
 import javafx.event.ActionEvent;
@@ -14,6 +15,8 @@ import javafx.scene.input.MouseEvent;
 
 public class Login {
 
+    private UserTest users;
+    private AppData currUser = AppData.getInstance();
     @FXML
     private Label createAnAccount;
 
@@ -47,29 +50,38 @@ public class Login {
         checkLogin();
     }
 
+    public void initialize(){
+        if (users == null){
+        users = new UserTest();
+        }
+    }
+
     private void checkLogin() throws IOException{
-        UserTest test = new UserTest();
-        ArrayList<User> users = new ArrayList<>();
-        users = test.createUsers();
-        for (User user : users) {
+        for (User user : users.getUsers()) {
             if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
                 invalidLogin.setText("Login Success");
                 if (user.getUserType() == 1){
+                    currUser.setSharedVariable(user);
                     m.changeScene("ApplicantGUI.fxml");
                 }
                 else if (user.getUserType() == 2){
+                    currUser.setSharedVariable(user);
                     m.changeScene("AdminGUI.fxml");
                 }
                 else if (user.getUserType() == 3){
+                    currUser.setSharedVariable(user);
                     m.changeScene("ReviewerGUI.fxml");
                 }
                 else if (user.getUserType() == 4){
+                    currUser.setSharedVariable(user);
                     m.changeScene("SponsorGUI.fxml");
                 }
                 else if (user.getUserType() == 5){
-                    m.changeScene("StewerGUI.fxml");
+                    currUser.setSharedVariable(user);
+                    m.changeScene("StuGUI.fxml", "styles.css", 1);
                 }
                 else if (user.getUserType() == 6){
+                    currUser.setSharedVariable(user);
                     m.changeScene("SupportGUI.fxml");
                 }
             }
@@ -80,6 +92,10 @@ public class Login {
                 invalidLogin.setText("Incorrect email or password");
             }
         }
+    }
+
+    public void setUser (UserTest users){
+        this.users = users;
     }
 
 }
