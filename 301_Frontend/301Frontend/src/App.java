@@ -3,12 +3,14 @@ import java.io.IOException;
 import Backend.UserTest;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
  
 public class App extends Application {
     private static Stage stg;
+    private Scene scene;
     @Override
     public void start(Stage primaryStage) {
   
@@ -29,8 +31,6 @@ public class App extends Application {
         stg.getScene().setRoot(pane);
     }
     public void changeScene(String fxml, UserTest users) throws IOException {
-        /*Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        stg.getScene().setRoot(pane);*/
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent root = (Parent) loader.load();
 
@@ -51,7 +51,17 @@ public class App extends Application {
         controller.setScholarshipName(name);
 
     }
- 
+    public void changeScene(String fxml, String css, int num) throws IOException {
+        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        Scene newScene = new Scene(pane);
+
+        // Add the CSS file to the new scene
+        newScene.getStylesheets().add(css);
+
+        // Set the new scene as the root of the stage
+        stg.setScene(newScene);
+    }
+
  public static void main(String[] args) {  
         launch(args);
     }

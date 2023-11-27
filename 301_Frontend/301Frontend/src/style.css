@@ -1,0 +1,67 @@
+/* General Application Styles */
+.root {
+    -fx-base: #0C2340; 
+    -fx-background-color: #282c34; 
+    background-color: #282c34; 
+    -fx-text-fill: #FFFFFF; 
+    color: #FFFFFF; 
+}
+.user-label {
+    -fx-text-fill: #FFC72C; 
+    color: #FFC72C; 
+    -fx-font-size: 16px;
+    font-size: 16px; 
+    -fx-font-weight: bold;
+    font-weight: bold; 
+    -fx-padding: 10px;
+    padding: 10px; 
+}
+
+.table-view {
+    -fx-background-color: #0C234B; 
+    background-color: #0C234B; 
+    -fx-table-cell-border-color: #000000;
+    -fx-table-header-border-color: #FFC72C; 
+    -fx-table-header-background: #CC0000; 
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #CC0000; 
+    background-color: #CC0000; 
+}
+
+.table-view .column-header {
+    -fx-text-fill: #FFFFFF; /* White text for headers */
+    color: #FFFFFF; /* Standard CSS property */
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #282c34; /* Dark background for rows */
+    background-color: #282c34; /* Standard CSS property */
+    -fx-text-fill: #FFFFFF; /* White text for readability */
+    color: #FFFFFF; /* Standard CSS property */
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: #767c88; /* Dark background for rows */
+    background-color: #767c88; /* Standard CSS property */
+    -fx-text-fill: #FFFFFF; /* White text for readability */
+    color: #FFFFFF; /* Standard CSS property */
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #464c58; /* Slightly lighter selection color */
+    background-color: #464c58; /* Standard CSS property */
+    -fx-text-fill: #FFFFFF;
+    color: #FFFFFF; /* Standard CSS property */
+}
+
+/* Scroll Bar Styles (Optional) */
+.scroll-bar {
+    -fx-background-color: #0C234B;
+    background-color: #0C234B; /* Standard CSS property */
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #383838; /* UA Medium Blue */
+    background-color: #444444; /* Standard CSS property */
+}
