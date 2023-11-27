@@ -4,6 +4,7 @@ import Backend.StudentApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -28,6 +29,12 @@ public class ApplicationCreationSceneController {
     private TextArea ApplicantEssay;
 
     @FXML
+    private TextArea ApplicantAcademicAche;
+
+    @FXML
+    private CheckBox ApplicantFinancialAid;
+
+    @FXML
     private TextField ApplicantMajor;
 
     @FXML
@@ -38,6 +45,9 @@ public class ApplicationCreationSceneController {
 
     @FXML
     private TextField ApplicantNetID;
+
+    @FXML
+    private TextField ApplicantStudentID;
 
     @FXML
     private Button ApplicationSubmit;
@@ -61,8 +71,7 @@ public class ApplicationCreationSceneController {
     @FXML
     void btnApplicationSubmition(ActionEvent event) {
         try {
-            Long temp = Long.parseLong(ApplicantNetID.getText());
-            currApplication = new StudentApplication(ApplicantName.getText(), temp, ApplicantMajor.getText(), ApplicantMinor.getText(), ApplicantEssay.getText());
+            currApplication = new StudentApplication(ApplicantName.getText(), ApplicantNetID.getText(), ApplicantStudentID.getText(), ApplicantMajor.getText(), ApplicantMinor.getText(), ApplicantAcademicAche.getText(), ApplicantFinancialAid.isSelected(), ApplicantEssay.getText());
 
             //Would be sent to the backend here using the scholarship name as the key
             System.out.println(currApplication.toString());

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
-
 
 <BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ApplicationCreationSceneController">
    <top>
@@ -24,10 +24,10 @@
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="1284.0" style="-fx-background-color: #E2E9EB;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="ApplicantName" layoutX="63.0" layoutY="60.0" prefHeight="26.0" prefWidth="323.0" />
-            <TextArea fx:id="ApplicantEssay" layoutX="487.0" layoutY="54.0" prefHeight="434.0" prefWidth="770.0" />
+            <TextArea fx:id="ApplicantAcademicAche" layoutX="487.0" layoutY="54.0" prefHeight="434.0" prefWidth="388.0" />
             <Button fx:id="ApplicationSubmit" layoutX="591.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnApplicationSubmition" prefHeight="34.0" prefWidth="108.0" text="Submit" />
-            <Button fx:id="docUpload" layoutX="194.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnDocUpload" prefHeight="25.0" prefWidth="63.0" text="Upload" />
-            <Label fx:id="FilePath" layoutX="70.0" layoutY="369.0" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: White; -fx-alignment: CENTER;" wrapText="true" />
+            <Button fx:id="docUpload" layoutX="189.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnDocUpload" prefHeight="25.0" prefWidth="63.0" text="Upload" />
+            <Label fx:id="FilePath" layoutX="63.0" layoutY="493.0" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: White; -fx-alignment: CENTER;" wrapText="true" />
             <Label layoutX="53.0" layoutY="30.0" prefHeight="18.0" prefWidth="145.0" style="-fx-alignment: LEFT;" text="Name">
                <font>
                   <Font size="18.0" />
@@ -39,28 +39,45 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="ApplicantMajor" layoutX="65.0" layoutY="222.0" prefHeight="26.0" prefWidth="323.0" />
-            <Label layoutX="55.0" layoutY="192.0" prefHeight="18.0" prefWidth="145.0" style="-fx-alignment: LEFT;" text="Major">
+            <TextField fx:id="ApplicantMajor" layoutX="63.0" layoutY="301.0" prefHeight="26.0" prefWidth="323.0" />
+            <Label layoutX="53.0" layoutY="271.0" prefHeight="18.0" prefWidth="145.0" style="-fx-alignment: LEFT;" text="Major">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="ApplicantMinor" layoutX="66.0" layoutY="296.0" prefHeight="26.0" prefWidth="323.0" />
-            <Label layoutX="56.0" layoutY="266.0" prefHeight="27.0" prefWidth="163.0" style="-fx-alignment: LEFT;" text="Minor (N/A if none)">
+            <TextField fx:id="ApplicantMinor" layoutX="63.0" layoutY="375.0" prefHeight="26.0" prefWidth="323.0" />
+            <Label layoutX="53.0" layoutY="345.0" prefHeight="27.0" prefWidth="163.0" style="-fx-alignment: LEFT;" text="Minor (N/A if none)">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="336.0" prefHeight="27.0" prefWidth="183.0" style="-fx-alignment: LEFT;" text="Upload Resume">
+            <Label layoutX="50.0" layoutY="460.0" prefHeight="27.0" prefWidth="183.0" style="-fx-alignment: LEFT;" text="Upload Resume">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="507.0" layoutY="29.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: LEFT;" text="Essay: Why do you deserve this scholarship?">
+            <Label layoutX="507.0" layoutY="29.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: LEFT;" text="Please list some academic achievements">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <TextField fx:id="ApplicantStudentID" layoutX="63.0" layoutY="224.0" prefHeight="26.0" prefWidth="323.0" />
+            <Label layoutX="53.0" layoutY="194.0" prefHeight="27.0" prefWidth="163.0" style="-fx-alignment: LEFT;" text="Student ID">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ApplicantEssay" layoutX="882.0" layoutY="55.0" prefHeight="434.0" prefWidth="388.0" />
+            <Label layoutX="902.0" layoutY="30.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: LEFT;" text="Essay: Why do you deserve this scholarship?">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="ApplicantFinancialAid" layoutX="63.0" layoutY="421.0" mnemonicParsing="false" style="-fx-background-color: White;" text="Are you qualified for financial aid?">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
          </children>
       </AnchorPane>
    </center>

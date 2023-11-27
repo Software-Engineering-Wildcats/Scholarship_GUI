@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #12346b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditProfileSceneController">
-   <children>
-      <Label layoutX="61.0" layoutY="44.0" prefHeight="42.0" prefWidth="102.0" style="-fx-background-color: White;" text="Edit Profile" />
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditProfileSceneController">
+   <top>
+      <AnchorPane prefHeight="74.0" prefWidth="1280.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backButton" layoutX="22.0" layoutY="15.0" mnemonicParsing="false" onAction="#backScene" prefHeight="36.0" prefWidth="88.0" text="Back" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="74.0" prefWidth="1280.0" style="-fx-background-color: #0C234B;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E2E9EB;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="563.0" layoutY="87.0" prefHeight="30.0" prefWidth="172.0" style="-fx-alignment: Center;" text="Enter new name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="569.0" layoutY="171.0" prefHeight="7.0" prefWidth="172.0" style="-fx-alignment: Center;" text="Enter new email" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="566.0" layoutY="263.0" prefHeight="30.0" prefWidth="172.0" style="-fx-alignment: Center;" text="Edit Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NewName" layoutX="531.0" layoutY="124.0" prefHeight="26.0" prefWidth="250.0" promptText="New Name" />
+            <Button fx:id="UpdateAccount" layoutX="578.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnUpdateAccount" prefHeight="42.0" prefWidth="167.0" text="Update Account">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label fx:id="PasswordChecker" layoutX="836.0" layoutY="338.0" prefHeight="19.0" prefWidth="255.0" textFill="RED" />
+            <Label layoutX="548.0" layoutY="27.0" prefHeight="18.0" prefWidth="220.0" style="-fx-alignment: CENTER;" text="Edit your profile">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NewEmail" layoutX="531.0" layoutY="206.0" prefHeight="26.0" prefWidth="250.0" promptText="New Email" />
+            <TextField fx:id="NewPassword" layoutX="530.0" layoutY="304.0" prefHeight="26.0" prefWidth="250.0" promptText="New Password" />
+            <TextField fx:id="ConfirmedNewPassword" layoutX="532.0" layoutY="351.0" prefHeight="26.0" prefWidth="250.0" promptText="Confirm Password" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>
