@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Backend.AppData;
 import Backend.User;
 import Backend.UserTest;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class Login {
+    AppData currUser = AppData.getInstance();
 
     @FXML
     private Label createAnAccount;
@@ -39,7 +41,7 @@ public class Login {
 
     @FXML
     void createAccount(MouseEvent event) throws IOException {
-        m.changeScene("createAccount.fxml");
+        m.changeScene("CreateAccount.fxml");
     }
 
     @FXML
@@ -60,8 +62,10 @@ public class Login {
                 } else if (user.getUserType() == 2) {
                     m.changeScene("AdminGUI.fxml");
                 } else if (user.getUserType() == 3) {
+                    currUser.setSharedVariable(user);
                     m.changeScene("ReviewerGUI.fxml");
                 } else if (user.getUserType() == 4) {
+                    currUser.setSharedVariable(user);
                     m.changeScene("SponsorGUI.fxml");
                 } else if (user.getUserType() == 5) {
                     m.changeScene("StewerdGUI.fxml");

@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Optional;
 import java.util.Scanner;
 
+import Backend.AppData;
 import Backend.StudentApplication;
 import Backend.scholarship;
 import javafx.collections.FXCollections;
@@ -53,6 +54,7 @@ public class SponsorGUIController {
     // Checks to see if is reviewer
     boolean selfReviewer = false;
 
+    AppData currUser = AppData.getInstance();
     //// containers
     @FXML
     private Button btLogOut;
@@ -188,7 +190,7 @@ public class SponsorGUIController {
         rbRelevance.setToggleGroup(sortToggle);
 
         //// For tfReviewersName
-        tfReviewersName.setText("User Three");
+        tfReviewersName.setText(currUser.getSharedVariable().getName());
 
         //// For taScholarshipInformation
         if (Files.exists(path) && Files.isRegularFile(path)) {
