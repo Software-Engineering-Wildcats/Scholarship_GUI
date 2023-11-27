@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -37,12 +38,21 @@ public class ApplicationCreationSceneController {
 
     String scholarshipName;
 
-    App sceney = new App();
+    App m = new App();
 
     File selectedFile;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private TextArea ApplicantEssay;
+
+    @FXML
+    private TextArea ApplicantAcademicAche;
+
+    @FXML
+    private CheckBox ApplicantFinancialAid;
 
     @FXML
     private TextField ApplicantMajor;
@@ -55,6 +65,9 @@ public class ApplicationCreationSceneController {
 
     @FXML
     private TextField ApplicantNetID;
+
+    @FXML
+    private TextField ApplicantStudentID;
 
     @FXML
     private Button ApplicationSubmit;
@@ -71,10 +84,14 @@ public class ApplicationCreationSceneController {
     }
 
     @FXML
+    void backScene(ActionEvent event) throws IOException {
+        m.changeScene("ApplicantGUI.fxml");
+    }
+
+    @FXML
     void btnApplicationSubmition(ActionEvent event) {
         try {
-            Long temp = Long.parseLong(ApplicantNetID.getText());
-            currApplication = new StudentApplication(ApplicantName.getText(), temp, ApplicantMajor.getText(), ApplicantMinor.getText(), ApplicantEssay.getText());
+            currApplication = new StudentApplication(ApplicantName.getText(), ApplicantNetID.getText(), ApplicantStudentID.getText(), ApplicantMajor.getText(), ApplicantMinor.getText(), ApplicantAcademicAche.getText(), ApplicantFinancialAid.isSelected(), ApplicantEssay.getText());
 
             //Would be sent to the backend here using the scholarship name as the key
             System.out.println(currApplication.toString());
@@ -85,7 +102,7 @@ public class ApplicationCreationSceneController {
     
 
 
-            sceney.changeScene("ApplicantGUI.fxml");
+            m.changeScene("ApplicantGUI.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

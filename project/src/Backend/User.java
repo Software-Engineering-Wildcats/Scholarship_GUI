@@ -1,7 +1,5 @@
 package Backend;
 
-//package backend if I want to add a folder names backend
-
 public class User {
     private String email;
     private String password;

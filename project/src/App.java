@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.util.ArrayList;
 
+import Backend.User;
+import Backend.UserTest;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +20,8 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     private static Stage stg;
+
+    public User currUser;
     
     @Override
     public void start(Stage primaryStage) {
@@ -27,7 +31,7 @@ public class App extends Application {
     try {
         stg = primaryStage;
         primaryStage.setResizable(false);
-        root = FXMLLoader.load(getClass().getResource("ApplicantGUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
         Scene scene = new Scene(root, 1280, 720);
           primaryStage.setScene(scene);
           primaryStage.show();
@@ -58,6 +62,20 @@ public class App extends Application {
         controller.setScholarshipName(name);
 
     }
+
+    public void changeScene(String fxml, UserTest users) throws IOException {
+        /*Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        stg.getScene().setRoot(pane);*/
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Parent root = (Parent) loader.load();
+
+        Login controller = loader.getController();
+        controller.setUser(users);
+        stg.getScene().setRoot(root);
+    }
+
+
+ 
 
 
  public static void main(String[] args) {

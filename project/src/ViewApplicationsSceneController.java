@@ -9,6 +9,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -17,7 +18,7 @@ import javafx.util.Callback;
 
 public class ViewApplicationsSceneController {
 
-    App sceney = new App();
+    App m = new App();
 
     List<StudentApplication> applicationTest = new ArrayList();
 
@@ -29,7 +30,19 @@ public class ViewApplicationsSceneController {
     private Label listInfo;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private TextField EssayField;
+
+    @FXML
+    private TextField AcademicAcheField;
+
+    @FXML
+    private TextField NetIDField;
+
+    @FXML
+    private CheckBox financialAidField;
 
     @FXML
     private TextField MajorField;
@@ -110,7 +123,7 @@ public class ViewApplicationsSceneController {
         List<StudentApplication> temp = new ArrayList();
 
         StudentApplication a = new StudentApplication();
-        StudentApplication f = new StudentApplication("The Application 5", 2, "ECE", "MSE", "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow. The rainbow is a division of white light into many beautiful colors. These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon. There is, according to legend, a boiling pot of gold at one end. People look, but no one ever finds it. When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.\r\n");
+        StudentApplication f = new StudentApplication("The Application 5", "rainsw", "1234567890", "ECE", "MSE", "Scholla", true, "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow. The rainbow is a division of white light into many beautiful colors. These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon. There is, according to legend, a boiling pot of gold at one end. People look, but no one ever finds it. When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.\r\n");
 
         temp.add(a);
         temp.add(f);
@@ -127,9 +140,11 @@ public class ViewApplicationsSceneController {
         if (!NameField.getText().isEmpty()){
             currentFood.setName(NameField.getText());
         }
+        if (!NetIDField.getText().isEmpty()){
+            currentFood.setNetID(NetIDField.getText());
+        }
         if (!StudentIDField.getText().isEmpty()){
-            Long temp = Long.parseLong(StudentIDField.getText());
-            currentFood.setNetID(temp);
+            currentFood.setstudentID(StudentIDField.getText());
         }
         if (!MajorField.getText().isEmpty()){
             currentFood.setMajor(MajorField.getText());
@@ -137,22 +152,31 @@ public class ViewApplicationsSceneController {
         if (!MinorField.getText().isEmpty()){
             currentFood.setMinor(MinorField.getText());
         }
+        if (!AcademicAcheField.getText().isEmpty()){
+            currentFood.setacademicAche(AcademicAcheField.getText());
+        }
         if (!EssayField.getText().isEmpty()){
             currentFood.setEssay(EssayField.getText());
         }
+        currentFood.setfinancialAid(financialAidField.isSelected());
 
         //This is everything being sent to the backend, it would update the stuff 
         System.out.println("This information would be updated to the backend.");
         System.out.println(currentFood.toString());
 
         try {
-            sceney.changeScene("ApplicantGUI.fxml");
+            m.changeScene("ApplicantGUI.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
 
+    }
+
+    @FXML
+    void backScene(ActionEvent event) throws IOException {
+        m.changeScene("ApplicantGUI.fxml");
     }
 
 
