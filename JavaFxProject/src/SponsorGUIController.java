@@ -99,7 +99,9 @@ public class SponsorGUIController {
     // Log out button sends to log in scene
     @FXML
     void btLogOutClicked(ActionEvent event) throws IOException {
-        Files.delete(path);
+        if (path.toFile().exists()) {
+            Files.delete(path);
+        }
         m.changeScene("LoginScene.fxml");
     }
 
