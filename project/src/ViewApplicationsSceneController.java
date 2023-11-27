@@ -146,7 +146,7 @@ public class ViewApplicationsSceneController {
         System.out.println(currentFood.toString());
 
         try {
-            sceney.changeScene("ApplicantScene.fxml");
+            sceney.changeScene("ApplicantGUI.fxml");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
