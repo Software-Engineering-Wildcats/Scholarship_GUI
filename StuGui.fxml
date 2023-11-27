@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Stewcontroller">
+   <children>
+      <Separator layoutX="986.0" layoutY="-15.0" opacity="0.98" orientation="VERTICAL" prefHeight="751.0" prefWidth="27.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c234b" height="125.0" layoutX="-3.0" layoutY="-19.0" stroke="BLACK" strokeType="INSIDE" width="1290.0" />
+      <Polygon fill="#ef4056" layoutX="82.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#ef4056" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="82.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="136.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ab0520" layoutX="28.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="82.0" layoutY="247.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#ef4056" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="136.0" layoutY="247.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#378dbd" layoutX="136.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#378dbd" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="136.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="82.0" layoutY="247.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="28.0" layoutY="349.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#81d3eb" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="136.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="190.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#378dbd" layoutX="28.0" layoutY="247.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ab0520" layoutX="190.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ab0520" layoutX="190.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="28.0" layoutY="349.0" opacity="0.68" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="82.0" layoutY="349.0" opacity="0.45" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="28.0" layoutY="451.0" opacity="0.35" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="28.0" layoutY="53.0" points="-28.0, 30.0, 26.0, 30.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#0c234b" layoutX="28.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ab0520" layoutX="244.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="190.0" layoutY="-59.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#001c48" layoutX="244.0" layoutY="-59.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#378dbd" layoutX="136.0" layoutY="-59.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#ab0520" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="82.0" layoutY="-59.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#ef4056" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="244.0" layoutY="-59.0" opacity="0.53" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#001c48" layoutX="28.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ab0520" layoutX="28.0" layoutY="43.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#0c234b" layoutX="298.0" layoutY="-59.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#1e5288" layoutX="82.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="28.0" layoutY="247.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="102.0" layoutY="451.0" opacity="0.45" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="28.0" layoutY="553.0" opacity="0.29" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="28.0" layoutY="666.0" opacity="0.09" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#378dbd" layoutX="82.0" layoutY="145.0" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#81d3eb" layoutX="48.0" layoutY="553.0" opacity="0.25" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#378dbd" layoutX="28.0" layoutY="451.0" opacity="0.27" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#0c234b" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fill="#ef4056" layoutX="109.0" layoutY="338.0" opacity="0.34" points="-28.0, 40.0, 26.0, 40.0, -28.0, 142.0" rotate="180.0" stroke="#ef4056" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="70.0" fitWidth="64.0" layoutX="1194.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/UA_logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="Table_View" layoutX="153.0" layoutY="106.0" prefHeight="614.0" prefWidth="817.0">
+        <columns>
+          <TableColumn fx:id="coulStudentID" prefWidth="122.0" text="StudentID" />
+          <TableColumn fx:id="coulStudentName" prefWidth="143.0" text="StudentName" />
+            <TableColumn fx:id="coulStatus" prefWidth="200.0" text="Status" />
+            <TableColumn fx:id="coulFunds" prefWidth="351.0" text="Funds" />
+        </columns>
+      </TableView>
+      <Button layoutX="1108.0" layoutY="208.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="150.0" text="Generate Report" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="OpenRequest" layoutX="1036.0" layoutY="134.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="44.0" prefWidth="230.0" text="Request Fund Allocation" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="1156.0" layoutY="644.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" text="Return" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="92.0" fitWidth="126.0" layoutX="1145.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/UA_logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
