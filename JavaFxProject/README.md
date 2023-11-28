@@ -4,15 +4,12 @@ Welcome to the frontend prototype of the UASAMS.
 
 ## VSCode Structure
 
-The workspace contains two folders by default, where:
+You must add a settings in your `.vscode/launch.json` to run the project outside of the jar file.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Click on "Run" at the top bar of your VS Code and select "Add Configuration."
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Add `,"vmArgs": "--module-path \"C:/Java/javafx-sdk-21.0.1/lib\" --add-modules javafx.controls,javafx.fxml"` after the `"projectName"` field.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## JAR Execution
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+The JAR file can only be ran if the batch file is ran. In your file explorer with the folder to this project open, doouble click on the `JarExe.bat` and the JAR file should open.
