@@ -14,4 +14,4 @@ You must add a settings in your `.vscode/launch.json` to run the project outside
 
 ## JAR Execution
 
-The JAR file can only be ran if the batch file is ran. In your file explorer with the folder to this project open, doouble click on the `JarExe.bat` and the JAR file should open.
+The JAR file can only be run if the batch file is run. In your file explorer with the folder to this project open, double click on the `JarExe.bat` and the JAR file should open.
