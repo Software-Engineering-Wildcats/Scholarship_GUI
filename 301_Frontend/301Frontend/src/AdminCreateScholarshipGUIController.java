@@ -56,7 +56,7 @@ public class AdminCreateScholarshipGUIController {
             showIncompleteFormAlert();
         } else {
             System.out.println("*****************"
-                    + "\nMock call to send Scholarship to backedn\nPassed Scholarship is:"
+                    + "\nMock call to send Scholarship to backend\nPassed Scholarship is:"
                     + "\nName: " + scholarshipName.getText()
                     + "\nPayout: " + payout.getText()
                     + "\nRequirements: " + requirements.getText()

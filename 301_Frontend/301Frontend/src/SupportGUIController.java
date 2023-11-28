@@ -87,7 +87,7 @@ public class SupportGUIController {
     @FXML
     void btSubmitClicked(ActionEvent event) {
         System.out.println("*****************"
-                + "\nMock call to send FeedbackNotes to backedn\nPassed FeedbackNotes are:"
+                + "\nMock call to send FeedbackNotes to backend\nPassed FeedbackNotes are:"
                 + "\nIsComplete: " + cbComplete.getValue()
                 + "\nNotes: " + tfNotes.getText());
 

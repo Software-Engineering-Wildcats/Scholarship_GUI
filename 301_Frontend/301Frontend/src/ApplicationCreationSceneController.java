@@ -11,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-
 public class ApplicationCreationSceneController {
 
     StudentApplication currApplication = new StudentApplication();
@@ -59,7 +58,10 @@ public class ApplicationCreationSceneController {
     private Label FilePath;
 
     @FXML
-    public void initialize(){
+    private Label errorMsg;
+
+    @FXML
+    public void initialize() {
 
     }
 
@@ -69,51 +71,51 @@ public class ApplicationCreationSceneController {
     }
 
     @FXML
-    void btnApplicationSubmition(ActionEvent event) {
-        try {
-            currApplication = new StudentApplication(ApplicantName.getText(), ApplicantNetID.getText(), ApplicantStudentID.getText(), ApplicantMajor.getText(), ApplicantMinor.getText(), ApplicantAcademicAche.getText(), ApplicantFinancialAid.isSelected(), ApplicantEssay.getText());
+    void btnApplicationSubmition(ActionEvent event) throws IOException {
+        if (!ApplicantName.getText().isEmpty() && !ApplicantNetID.getText().isEmpty()
+                && !ApplicantStudentID.getText().isEmpty() && !ApplicantMajor.getText().isEmpty()
+                && !ApplicantMinor.getText().isEmpty()
+                && !ApplicantAcademicAche.getText().isEmpty()
+                && (ApplicantFinancialAid.isSelected() || !ApplicantFinancialAid.isSelected())
+                && !ApplicantEssay.getText().isEmpty()) {
+            currApplication = new StudentApplication(ApplicantName.getText(), ApplicantNetID.getText(),
+                    ApplicantStudentID.getText(), ApplicantMajor.getText(), ApplicantMinor.getText(),
+                    ApplicantAcademicAche.getText(), ApplicantFinancialAid.isSelected(), ApplicantEssay.getText());
 
-            //Would be sent to the backend here using the scholarship name as the key
+            // Would be sent to the backend here using the scholarship name as the key
             System.out.println(currApplication.toString());
             System.out.println("ScholarshipName = " + scholarshipName);
-            if (selectedFile.exists()){
+            if (selectedFile.exists()) {
                 System.out.println(selectedFile.getName());
             }
-    
-
 
             m.changeScene("ApplicantGUI.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("This is where it broke");
+        } else {
+            errorMsg.setText("Please enter all the fields in the application.");
         }
 
     }
 
-
     @FXML
     void btnDocUpload(ActionEvent event) {
         Stage m = new Stage();
-        
+
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF Files (*.pdf)", "*.pdf");
         FileChooser file = new FileChooser();
         file.getExtensionFilters().add(extFilter);
         file.setTitle("Open File");
         selectedFile = file.showOpenDialog(m);
 
-
-        if (file != null){
+        if (file != null) {
             Label pthLabel = (Label) FilePath;
             pthLabel.setText(selectedFile.getName());
-            
 
         }
 
     }
 
-    void setScholarshipName(String name){
+    void setScholarshipName(String name) {
         scholarshipName = name;
     }
-
 
 }

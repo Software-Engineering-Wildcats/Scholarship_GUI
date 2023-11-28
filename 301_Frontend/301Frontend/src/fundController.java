@@ -7,30 +7,40 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class fundController {
-private Stage stage;
- private Scene scene;
- private Parent root;
+    App m = new App();
     @FXML
     private Button Submit;
 
     @FXML
-    void switchToScene1(ActionEvent event) {
-        
- try {
-    root = FXMLLoader.load(getClass().getResource("StuGui.fxml"));
-      stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-  scene = new Scene(root);
-  scene.getStylesheets().add("/style.css");
-  stage.setScene(scene);
-  stage.show();
-} catch (IOException e) {
-    
-    e.printStackTrace();
-}
+    private TextField accNumber;
 
+    @FXML
+    private TextField amtDis;
+
+    @FXML
+    private TextField amtSel;
+
+    @FXML
+    private Label errorMsg;
+
+    @FXML
+    void switchToScene1(ActionEvent event) throws IOException {
+        if (accNumber.getText().isEmpty() || amtDis.getText().isEmpty() || amtSel.getText().isEmpty()) {
+            errorMsg.setText("Please enter all the fields");
+        } else {
+            m.changeScene("StuGUI.fxml", "style.css", 1);
+        }
+
+    }
+
+    @FXML
+    void switchToScene2(ActionEvent event) throws IOException {
+        m.changeScene("StuGUI.fxml", "style.css", 1);
     }
 
 }

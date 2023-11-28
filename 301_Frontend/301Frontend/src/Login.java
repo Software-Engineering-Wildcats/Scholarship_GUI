@@ -42,7 +42,7 @@ public class Login {
 
     @FXML
     void createAccount(MouseEvent event) throws IOException {
-        m.changeScene("createAccount.fxml");
+        m.changeScene("CreateAccount.fxml");
     }
 
     @FXML
@@ -50,51 +50,45 @@ public class Login {
         checkLogin();
     }
 
-    public void initialize(){
-        if (users == null){
-        users = new UserTest();
+    public void initialize() {
+        if (users == null) {
+            users = new UserTest();
         }
     }
 
-    private void checkLogin() throws IOException{
+    private void checkLogin() throws IOException {
         for (User user : users.getUsers()) {
-            if (username.getText().toString().equals(user.getEmail()) && password.getText().toString().equals(user.getPassword())){
+            if (username.getText().toString().equals(user.getEmail())
+                    && password.getText().toString().equals(user.getPassword())) {
                 invalidLogin.setText("Login Success");
-                if (user.getUserType() == 1){
+                if (user.getUserType() == 1) {
                     currUser.setSharedVariable(user);
                     m.changeScene("ApplicantGUI.fxml");
-                }
-                else if (user.getUserType() == 2){
+                } else if (user.getUserType() == 2) {
                     currUser.setSharedVariable(user);
                     m.changeScene("AdminGUI.fxml");
-                }
-                else if (user.getUserType() == 3){
+                } else if (user.getUserType() == 3) {
                     currUser.setSharedVariable(user);
                     m.changeScene("ReviewerGUI.fxml");
-                }
-                else if (user.getUserType() == 4){
+                } else if (user.getUserType() == 4) {
                     currUser.setSharedVariable(user);
                     m.changeScene("SponsorGUI.fxml");
-                }
-                else if (user.getUserType() == 5){
+                } else if (user.getUserType() == 5) {
                     currUser.setSharedVariable(user);
-                    m.changeScene("StuGUI.fxml", "style.css", 1);
-                }
-                else if (user.getUserType() == 6){
+                    m.changeScene("StuGui.fxml", "style.css", 1);
+                } else if (user.getUserType() == 6) {
                     currUser.setSharedVariable(user);
                     m.changeScene("SupportGUI.fxml");
                 }
-            }
-            else if(username.getText().isEmpty() && password.getText().isEmpty()){
+            } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
                 invalidLogin.setText("Please enter your login");
-            }
-            else{
+            } else {
                 invalidLogin.setText("Incorrect email or password");
             }
         }
     }
 
-    public void setUser (UserTest users){
+    public void setUser(UserTest users) {
         this.users = users;
     }
 

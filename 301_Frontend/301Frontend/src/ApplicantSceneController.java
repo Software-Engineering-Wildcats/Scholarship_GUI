@@ -14,7 +14,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-
 public class ApplicantSceneController {
     List<scholarship> slippy = new ArrayList();
 
@@ -31,7 +30,7 @@ public class ApplicantSceneController {
     @FXML
     private Button EditProfile;
 
-    @FXML   
+    @FXML
     private Label lab;
 
     @FXML
@@ -46,14 +45,12 @@ public class ApplicantSceneController {
     @FXML
     private Button ViewApplications;
 
-
     @FXML
-    public void initialize () {
+    public void initialize() {
         userName.setText(currUser.getSharedVariable().getName());
         slippy = testScholarships();
 
-        
-        for (int i =0; i < slippy.size(); i++){
+        for (int i = 0; i < slippy.size(); i++) {
             listy.getItems().add(slippy.get(i));
         }
 
@@ -77,7 +74,6 @@ public class ApplicantSceneController {
             }
         });
 
-
         listy.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<scholarship>() {
 
             @Override
@@ -86,29 +82,28 @@ public class ApplicantSceneController {
 
                 listInfo.setText(currentFood.toString());
             }
-            
+
         });
 
     }
 
     @FXML
-    void applicationCreation(ActionEvent event) { 
+    void applicationCreation(ActionEvent event) {
         btnCreateApplication.setOnAction(e -> {
             try {
 
                 m.changeScene("ApplicationCreationScene.fxml", currentFood.getScholarshipName());
             }
 
-             catch (IOException e1) {
+            catch (IOException e1) {
                 e1.printStackTrace();
             }
         });
-        
 
     }
 
     @FXML
-    void btnEditProfile(ActionEvent event) throws IOException{
+    void btnEditProfile(ActionEvent event) throws IOException {
         m.changeScene("EditProfileScene.fxml");
     }
 
@@ -131,14 +126,16 @@ public class ApplicantSceneController {
 
         scholarship a = new scholarship();
         scholarship b = new scholarship("The Scholarship 1");
-        scholarship c = new scholarship("The Scholarship 2", 2);
-        scholarship d = new scholarship("The Scholarship 3", 2, "04/14/2003");
-        scholarship e = new scholarship("The Scholarship 4", 2, "04/14/2003", "One day, Bella and Jacky went to the market. They were picking up some fresh fruit for mama, but when they got there all they could find was tomotoes. Jackie said \"We'll kill that bitch.\" Bella said \"Thats out biscuit supplier\". One day, Bella and Jacky went to the market. They were picking up some fresh fruit for mama, but when they got there all they could find was tomotoes. Jackie said \\\"We'll kill that bitch.\\\" Bella said \\\"Thats out biscuit supplier\\\".");
-        scholarship f = new scholarship("The Scholarship 5", 2, "04/14/2003", "You must not fucking idiot.", "ECE, MSE, Finance, BIology, people");
+        scholarship c = new scholarship("The Scholarship 2", 200);
+        scholarship d = new scholarship("The Scholarship 3", 30, "04/14/2024");
+        scholarship e = new scholarship("The Scholarship 4", 4000, "12/20/2023",
+                "It was a bright cold day in April, and the clocks were striking thirteen");
+        scholarship f = new scholarship("The Scholarship 5", 1987, "6/12/2024", "It was a pleasure to burn",
+                "ECE, MSE, Finance, Biology");
 
         temp.add(a);
         temp.add(b);
-        temp.add(c); 
+        temp.add(c);
         temp.add(d);
         temp.add(e);
         temp.add(f);
@@ -146,6 +143,5 @@ public class ApplicantSceneController {
         return temp;
 
     }
-
 
 }

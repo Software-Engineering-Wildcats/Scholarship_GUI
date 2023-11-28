@@ -25,7 +25,7 @@
          <children>
             <TextField fx:id="ApplicantName" layoutX="63.0" layoutY="60.0" prefHeight="26.0" prefWidth="323.0" />
             <TextArea fx:id="ApplicantAcademicAche" layoutX="487.0" layoutY="54.0" prefHeight="434.0" prefWidth="388.0" />
-            <Button fx:id="ApplicationSubmit" layoutX="591.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnApplicationSubmition" prefHeight="34.0" prefWidth="108.0" text="Submit" />
+            <Button fx:id="ApplicationSubmit" layoutX="588.0" layoutY="524.0" mnemonicParsing="false" onAction="#btnApplicationSubmition" prefHeight="34.0" prefWidth="108.0" text="Submit" />
             <Button fx:id="docUpload" layoutX="189.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnDocUpload" prefHeight="25.0" prefWidth="63.0" text="Upload" />
             <Label fx:id="FilePath" layoutX="63.0" layoutY="493.0" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: White; -fx-alignment: CENTER;" wrapText="true" />
             <Label layoutX="53.0" layoutY="30.0" prefHeight="18.0" prefWidth="145.0" style="-fx-alignment: LEFT;" text="Name">
@@ -56,7 +56,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="507.0" layoutY="29.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: LEFT;" text="Please list some academic achievements">
+            <Label layoutX="491.0" layoutY="30.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: CENTER;" text="Please list some academic achievements">
                <font>
                   <Font size="18.0" />
                </font>
@@ -68,16 +68,21 @@
                </font>
             </Label>
             <TextArea fx:id="ApplicantEssay" layoutX="882.0" layoutY="55.0" prefHeight="434.0" prefWidth="388.0" />
-            <Label layoutX="902.0" layoutY="30.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: LEFT;" text="Essay: Why do you deserve this scholarship?">
+            <Label layoutX="886.0" layoutY="30.0" prefHeight="27.0" prefWidth="381.0" style="-fx-alignment: CENTER;" text="Essay: Why do you deserve this scholarship?">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <CheckBox fx:id="ApplicantFinancialAid" layoutX="63.0" layoutY="421.0" mnemonicParsing="false" style="-fx-background-color: White;" text="Are you qualified for financial aid?">
+            <CheckBox fx:id="ApplicantFinancialAid" layoutX="63.0" layoutY="421.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="321.0" style="-fx-background-color: White;" text="Are you qualified for financial aid?">
                <font>
                   <Font size="18.0" />
                </font>
             </CheckBox>
+            <Label fx:id="errorMsg" layoutX="728.0" layoutY="533.0" prefHeight="20.0" prefWidth="292.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
