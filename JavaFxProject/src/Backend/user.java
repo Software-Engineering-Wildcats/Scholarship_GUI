@@ -13,53 +13,55 @@ public class User {
         this.typeUser = typeUser;
     }
 
-    public String getEmail(){
+    public User(String email, String password, String name, String typeUser) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        setUserType(typeUser);
+    }
+
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getUserType(){
+    public int getUserType() {
         return typeUser;
     }
 
-    public void setUserType(String userType){
-        if (userType == "Applicant"){
+    public void setUserType(String userType) {
+        if (userType == "Applicant") {
             typeUser = 1;
-        }
-        else if (userType == "Admin"){
+        } else if (userType == "Admin") {
             typeUser = 2;
-        }
-        else if (userType == "Reviewer"){
+        } else if (userType == "Reviewer") {
             typeUser = 3;
-        }
-        else if (userType == "Sponsor"){
+        } else if (userType == "Sponsor") {
             typeUser = 4;
-        }
-        else if (userType == "Stewer"){
+        } else if (userType == "Stewer") {
             typeUser = 5;
-        }
-        else if (userType == "Support"){
+        } else if (userType == "Support") {
             typeUser = 6;
-        }
-        else{
+        } else {
             typeUser = 1;
         }
     }

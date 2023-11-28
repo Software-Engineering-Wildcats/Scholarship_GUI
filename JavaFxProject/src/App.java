@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-import Backend.AppData;
+import Backend.UserTest;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +29,42 @@ public class App extends Application {
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stg.getScene().setRoot(pane);
+    }
+
+    public void changeScene(String fxml, UserTest users) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Parent root = (Parent) loader.load();
+
+        Login controller = loader.getController();
+        controller.setUser(users);
+        stg.getScene().setRoot(root);
+    }
+
+    public void changeScene(String fxml, String name) throws IOException {
+        // Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+
+        // Black magic to get a variable across scenes
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        Parent root = (Parent) loader.load();
+
+        stg.getScene().setRoot(root);
+        ApplicationCreationSceneController controller = loader.getController();
+        controller.setScholarshipName(name);
+
+    }
+
+    public void changeScene(String fxml, String css, int num) throws IOException {
+        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        Scene newScene = new Scene(pane);
+
+        // Add the CSS file to the new scene
+        newScene.getStylesheets().add(css);
+        System.out.println(css);
+
+        // Set the new scene as the root of the stage
+        stg.setScene(newScene);
+        stg.show();
     }
 
     public static void main(String[] args) {

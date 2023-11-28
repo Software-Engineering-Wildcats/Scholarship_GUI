@@ -14,8 +14,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class Login {
-    AppData currUser = AppData.getInstance();
 
+    private UserTest users;
+    private AppData currUser = AppData.getInstance();
     @FXML
     private Label createAnAccount;
 
@@ -49,17 +50,22 @@ public class Login {
         checkLogin();
     }
 
+    public void initialize() {
+        if (users == null) {
+            users = new UserTest();
+        }
+    }
+
     private void checkLogin() throws IOException {
-        UserTest test = new UserTest();
-        ArrayList<User> users = new ArrayList<>();
-        users = test.createUsers();
-        for (User user : users) {
+        for (User user : users.getUsers()) {
             if (username.getText().toString().equals(user.getEmail())
                     && password.getText().toString().equals(user.getPassword())) {
                 invalidLogin.setText("Login Success");
                 if (user.getUserType() == 1) {
+                    currUser.setSharedVariable(user);
                     m.changeScene("ApplicantGUI.fxml");
                 } else if (user.getUserType() == 2) {
+                    currUser.setSharedVariable(user);
                     m.changeScene("AdminGUI.fxml");
                 } else if (user.getUserType() == 3) {
                     currUser.setSharedVariable(user);
@@ -68,8 +74,10 @@ public class Login {
                     currUser.setSharedVariable(user);
                     m.changeScene("SponsorGUI.fxml");
                 } else if (user.getUserType() == 5) {
-                    m.changeScene("StewerdGUI.fxml");
+                    currUser.setSharedVariable(user);
+                    m.changeScene("StuGui.fxml", "style.css", 1);
                 } else if (user.getUserType() == 6) {
+                    currUser.setSharedVariable(user);
                     m.changeScene("SupportGUI.fxml");
                 }
             } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
@@ -78,6 +86,10 @@ public class Login {
                 invalidLogin.setText("Incorrect email or password");
             }
         }
+    }
+
+    public void setUser(UserTest users) {
+        this.users = users;
     }
 
 }

@@ -15,6 +15,9 @@ public class CreateAccount {
     private App m = new App();
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private Button createAccountButton;
 
     @FXML
@@ -37,21 +40,24 @@ public class CreateAccount {
 
     @FXML
     void accountCreate(ActionEvent event) throws IOException {
-        if (createName.getText().isEmpty() || createEmail.getText().isEmpty() || createPassword.getText().isEmpty()
-                || userSelect.getValue() == null) {
-            errorLabel.setText("Please enter all the fields");
-            nonStudentError.setText("");
-        } else if (userSelect.getValue().equals("Non-Student")) {
-            errorLabel.setText("");
-            nonStudentError
-                    .setText("If you are a Non-Student, please contact University Staff to create an account for you.");
-        } else if (userSelect.getValue().equals("Student") && !(createName.getText().isEmpty())
-                && !(createEmail.getText().isEmpty()) && !(createPassword.getText().isEmpty())) {
-            UserTest test = new UserTest();
-            test.addUser(createEmail.getText().toString(), createPassword.getText().toString(),
-                    createName.getText().toString(), 1);
-            m.changeScene("LoginScene.fxml");
-        }
+       if (createName.getText().isEmpty() ||createEmail.getText().isEmpty() || createPassword.getText().isEmpty() || userSelect.getValue() == null){
+        errorLabel.setText("Please enter all the fields");
+        nonStudentError.setText("");
+       }
+       else if(userSelect.getValue().equals("Non-Student")){
+        errorLabel.setText("");
+        nonStudentError.setText("If you are a Non-Student, please contact University Staff to create an account for you.");
+       }
+       else if (userSelect.getValue().equals("Student") && !(createName.getText().isEmpty()) && !(createEmail.getText().isEmpty()) && !(createPassword.getText().isEmpty())){
+        UserTest test = new UserTest();
+        test.addUser(createEmail.getText().toString(), createPassword.getText().toString(), createName.getText().toString(), 1); 
+        m.changeScene("LoginScene.fxml", test);
+       }
+    }
+    
+    @FXML
+    void goBack(ActionEvent event) throws IOException {
+        m.changeScene("LoginScene.fxml");
     }
 
     private void handleChoiceBoxSelection() {
@@ -62,7 +68,7 @@ public class CreateAccount {
     public void initialize() {
         userSelect.setItems(FXCollections.observableArrayList("Student", "Non-Student"));
 
-        // Create listener for box selection
+        //Create listener for box selection
         userSelect.setOnAction(event -> handleChoiceBoxSelection());
     }
 
