@@ -1,1 +1,0 @@
-java --enable-preview --module-path "C:/Program Files/Java/javafx-sdk-21.0.1/lib"  --add-modules javafx.controls,javafx.fxml -jar C:/Users/SamP9/OneDrive/Documents/GitHub/Frontend/301_Frontend/301Frontend/301Frontend.jar
