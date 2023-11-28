@@ -1,7 +1,6 @@
 import java.io.IOException;
 
 import Backend.AppData;
-import Backend.Feedback;
 import Backend.ScholarshipApplicationContact;
 import Backend.StudentApplication;
 import Backend.scholarship;
@@ -13,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
