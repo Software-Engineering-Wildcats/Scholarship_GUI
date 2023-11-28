@@ -4,6 +4,7 @@ Welcome to the frontend prototype of the UASAMS.
 
 ## VSCode Structure
 
+You must have installed JavaFX. Check out https://openjfx.io/
 You must add a settings in your `.vscode/launch.json` to run the project outside of the jar file.
 
 Click on "Run" at the top bar of your VS Code and select "Add Configuration."
