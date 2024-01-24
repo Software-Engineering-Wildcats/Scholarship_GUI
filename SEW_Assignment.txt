@@ -1,0 +1,10 @@
+The U of A has tasked our team to create a graphical user interface for a scholarship system. So far our team has developed GUIs for 6 user roles (applicant, admin, sponsor, reviewer, steward, and support) 
+
+Your job is to create a dedicated GUI for Dept. Head Sharon O'Niel in the system. Will she have one of the existing user roles? Or will she have her own role with elevated privileges? Will she be able to terminate any student in the SFWE department at will?? Remove scholarships for her students she deems unworthy???
+
+Some places to start:
+Sharon will need her account created in src > Backend > UserTest
+The GUIs were developed using JavaFX and Scene Builder. We recommend recommend installing these tools to work on this project
+The program starts with App.Java, which loads the Login.java scene. You'll have to configure the Login scene to allow it to change to Sharon's GUI, and then create Sharon GUI.
+Sharon's GUI will have two parts, the SharonController.java and Sharon.fxml. The Sharon.fxml file will be generated with your Scene Builder app, and the SharonController.java will be coded by hand. 
+If you are stuck, you can look at other SceneController's for ideas on how the .java file is organized!
